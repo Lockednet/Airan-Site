@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEC Serviços Elétricos | GEC Electric Inc. - Bahia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #040917;
+            --bg-navy: #0a1837;
+            --electric-blue: #0055ff;
+            --gold-start: #ffdd00;
+            --gold-end: #ff8800;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 15% 15%, #0d255c 0%, #061029 45%, #030712 100%);
+            background-attachment: fixed;
+            color: #f8fafc;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .font-brand {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .circuit-bg {
+            background-image: 
+                radial-gradient( rgba(0, 119, 255, 0.14) 1px, transparent 1px ),
+                linear-gradient(to right, rgba(0, 102, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 102, 255, 0.04) 1px, transparent 1px);
+            background-size: 32px 32px, 64px 64px, 64px 64px;
+        }
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(16, 36, 82, 0.62) 0%, rgba(7, 17, 40, 0.78) 100%);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(96, 165, 250, 0.22);
+            box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.65), inset 0 1px 1px rgba(255, 255, 255, 0.12);
+        }
+        .glass-card {
+            background: linear-gradient(145deg, rgba(19, 43, 97, 0.48) 0%, rgba(8, 20, 48, 0.72) 100%);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            box-shadow: 0 10px 30px -5px rgba(2, 6, 23, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(250, 204, 21, 0.65);
+            box-shadow: 0 20px 40px -12px rgba(0, 85, 255, 0.45), 0 0 22px rgba(255, 196, 0, 0.18);
+        }
+        .glass-input {
+            background: rgba(5, 13, 33, 0.75);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            color: #ffffff;
+            transition: all 0.25s ease;
+        }
+        .glass-input:focus {
+            outline: none;
+            border-color: #ffcc00;
+            box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.22);
+        }
+        .text-gradient-gold {
+            background: linear-gradient(90deg, #fff380 0%, #ffcc00 45%, #ff8800 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-blue {
+            background: linear-gradient(90deg, #ffffff 0%, #93c5fd 55%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-gold-gradient {
+            background: linear-gradient(135deg, #ffd900 0%, #ff9900 100%);
+            color: #050d21;
+            box-shadow: 0 8px 25px -4px rgba(255, 170, 0, 0.55);
+            transition: all 0.3s ease;
+        }
+        .btn-gold-gradient:hover {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 12px 32px -4px rgba(255, 196, 0, 0.8);
+            filter: brightness(1.06);
+        }
+        .btn-whatsapp-gradient {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: #ffffff;
+            box-shadow: 0 10px 28px -5px rgba(37, 211, 102, 0.55);
+            transition: all 0.3s ease;
+        }
+        .btn-whatsapp-gradient:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 14px 35px -4px rgba(37, 211, 102, 0.8);
+            filter: brightness(1.08);
+        }
+        .btn-electric-gradient {
+            background: linear-gradient(135deg, #0066ff 0%, #0033aa 100%);
+            color: #ffffff;
+            border: 1px solid rgba(147, 197, 253, 0.35);
+            box-shadow: 0 8px 25px -4px rgba(0, 102, 255, 0.55);
+            transition: all 0.3s ease;
+        }
+        .btn-electric-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -4px rgba(0, 119, 255, 0.8);
+            border-color: rgba(250, 204, 21, 0.6);
+        }
+        .insta-float {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            box-shadow: 0 10px 30px rgba(214, 36, 159, 0.6), 0 0 0 3px rgba(255, 255, 255, 0.18);
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .insta-float:hover {
+            transform: scale(1.1) translateY(-4px);
+            box-shadow: 0 16px 36px rgba(214, 36, 159, 0.85), 0 0 0 4px rgba(255, 204, 0, 0.5);
+        }
+        .tab-active {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.22) 0%, rgba(0, 85, 255, 0.35) 100%);
+            border-color: #ffcc00;
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.25);
+        }
+        .glow-orb-blue {
+            position: fixed;
+            width: 480px;
+            height: 480px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.24) 0%, rgba(0, 0, 0, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .glow-orb-gold {
+            position: fixed;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 187, 0, 0.16) 0%, rgba(0, 0, 0, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.6)); }
+            50% { filter: drop-shadow(0 0 22px rgba(0, 140, 255, 0.95)); }
+        }
+        .logo-glow {
+            animation: pulseGlow 4s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="circuit-bg relative selection:bg-yellow-400 selection:text-slate-950">
+
+    <div class="glow-orb-blue -top-32 -left-32"></div>
+    <div class="glow-orb-gold top-1/3 -right-36"></div>
+    <div class="glow-orb-blue bottom-0 left-1/4"></div>
+
+    <header class="sticky top-0 z-40 glass-panel border-b border-blue-400/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-4 cursor-pointer" onclick="switchTab('home')">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 logo-glow">
+                        <svg viewBox="0 0 120 120" class="w-full h-full">
+                            <defs>
+                                <linearGradient id="diamondBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#0077ff"/>
+                                    <stop offset="55%" stop-color="#003388"/>
+                                    <stop offset="100%" stop-color="#04102e"/>
+                                </linearGradient>
+                                <linearGradient id="diamondGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ffee55"/>
+                                    <stop offset="50%" stop-color="#ffaa00"/>
+                                    <stop offset="100%" stop-color="#cc6600"/>
+                                </linearGradient>
+                            </defs>
+                            <polygon points="60,4 116,60 60,116 4,60" fill="url(#diamondBlue)" stroke="#38bdf8" stroke-width="2.5"/>
+                            <polygon points="60,4 38,96 4,60" fill="url(#diamondGold)"/>
+                            <g stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.65">
+                                <polyline points="55,24 68,14 78,14"/>
+                                <circle cx="78" cy="14" r="2.2" fill="#93c5fd"/>
+                                <polyline points="50,36 62,24 74,24"/>
+                                <circle cx="74" cy="24" r="2.2" fill="#93c5fd"/>
+                                <polyline points="46,88 86,88 98,74"/>
+                                <circle cx="98" cy="74" r="2.5" fill="#ffcc00"/>
+                                <polyline points="58,100 72,92 84,92"/>
+                                <circle cx="84" cy="92" r="2" fill="#93c5fd"/>
+                            </g>
+                            <polygon points="43,20 26,64 41,64 34,102 58,54 41,54" fill="#ffffff" filter="drop-shadow(0px 3px 4px rgba(0,0,0,0.65))"/>
+                            <text x="53" y="59" font-family="Montserrat, sans-serif" font-weight="900" font-size="22" fill="#ffffff" letter-spacing="0.5">GEC</text>
+                            <text x="50" y="71" font-family="Montserrat, sans-serif" font-weight="700" font-size="7.3" fill="#e2e8f0" letter-spacing="0.6">ELECTRIC INC.</text>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-brand font-black text-xl sm:text-2xl tracking-wider text-white">GEC</span>
+                            <span class="font-brand font-extrabold text-lg sm:text-xl text-gradient-gold">SERVIÇOS ELÉTRICOS</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-blue-200/80 font-medium flex items-center gap-1.5">
+                            <i class="fa-solid fa-bolt text-yellow-400"></i>
+                            <span>GEC Electric Inc. • Atendemos em toda a Bahia</span>
+                        </p>
+                    </div>
+                </div>
+
+                <nav class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 w-full md:w-auto">
+                    <button id="tabBtn-home" onclick="switchTab('home')" class="tab-active px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border border-blue-400/30 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-bolt-lightning text-yellow-400"></i>
+                        <span>Início & Serviços</span>
+                    </button>
+                    <button id="tabBtn-portfolio" onclick="switchTab('portfolio')" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border border-blue-400/20 text-blue-100 hover:border-yellow-400/50 transition-all flex items-center gap-2 bg-slate-900/40">
+                        <i class="fa-solid fa-helmet-safety text-yellow-400"></i>
+                        <span>Serviços Concluídos</span>
+                        <span id="badgeCount" class="px-2 py-0.5 text-[11px] rounded-full bg-yellow-400 text-slate-950 font-extrabold">0</span>
+                    </button>
+                    <button id="tabBtn-admin" onclick="switchTab('admin')" class="px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-bold border border-blue-400/20 text-blue-200 hover:border-yellow-400/50 transition-all flex items-center gap-1.5 bg-slate-900/40" title="Adicionar Serviço Concluído / Configurar GitHub">
+                        <i class="fa-solid fa-plus-circle text-yellow-400"></i>
+                        <span>Publicar Obra</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+
+        <section id="view-home" class="space-y-12">
+            <div class="glass-panel rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden border border-blue-400/30">
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-yellow-400/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-20 -top-20 w-80 h-80 bg-blue-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-yellow-400/20 to-blue-500/20 border border-yellow-400/40 text-yellow-300 text-xs sm:text-sm font-bold tracking-wide uppercase">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Qualidade, Segurança e Confiança em cada projeto!</span>
+                        </div>
+
+                        <h1 class="font-brand font-black text-3xl sm:text-5xl lg:text-6xl leading-tight tracking-tight">
+                            <span class="text-white block">GEC SERVIÇOS</span>
+                            <span class="text-gradient-gold block">ELÉTRICOS</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-blue-100/90 leading-relaxed max-w-2xl">
+                            A <strong class="text-yellow-400 font-bold">GEC Serviços Elétricos</strong> oferece soluções completas em serviços elétricos residenciais, comerciais e industriais, trabalhando com profissionalismo, responsabilidade e compromisso com cada cliente.
+                        </p>
+
+                        <div class="glass-card rounded-2xl p-4 sm:p-5 border-l-4 border-l-yellow-400">
+                            <p class="text-xs uppercase tracking-widest text-yellow-400 font-bold mb-1">Nosso Compromisso</p>
+                            <p class="text-sm sm:text-base text-slate-200">
+                                Trabalhamos para oferecer soluções eficientes, organização, segurança e qualidade em cada serviço executado. <span class="text-yellow-300 font-semibold">GEC Serviços Elétricos: sua energia em boas mãos!</span>
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                            <a href="https://wa.me/5575982114080?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20GEC%20Servi%C3%A7os%20El%C3%A9tricos%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-gradient px-7 py-4 rounded-2xl font-extrabold text-base sm:text-lg flex items-center justify-center gap-3 text-center">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                <span>Solicite seu Orçamento no WhatsApp</span>
+                            </a>
+                            <button onclick="switchTab('portfolio')" class="btn-electric-gradient px-6 py-4 rounded-2xl font-bold text-sm sm:text-base flex items-center justify-center gap-2.5">
+                                <i class="fa-solid fa-images text-yellow-400"></i>
+                                <span>Ver Serviços Concluídos</span>
+                            </button>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-4 pt-2 text-xs sm:text-sm text-blue-200/90">
+                            <div class="flex items-center gap-2 bg-slate-900/60 px-3.5 py-2 rounded-xl border border-blue-400/20">
+                                <i class="fa-solid fa-phone-volume text-yellow-400"></i>
+                                <span class="font-bold text-white">(75) 98211-4080</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-slate-900/60 px-3.5 py-2 rounded-xl border border-blue-400/20">
+                                <i class="fa-solid fa-location-dot text-yellow-400"></i>
+                                <span class="font-semibold">Atendemos em toda a Bahia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="glass-card rounded-3xl p-6 sm:p-7 relative border border-yellow-400/30">
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-blue-400/20">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg">
+                                        <i class="fa-solid fa-bolt"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="font-brand font-extrabold text-white text-lg">ORÇAMENTO RÁPIDO</h2>
+                                        <p class="text-xs text-blue-200">Envie sua necessidade direto para o nosso WhatsApp</p>
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-bold flex items-center gap-1">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Online
+                                </span>
+                            </div>
+
+                            <form onsubmit="sendCustomWhatsAppQuote(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-blue-200 mb-1.5">Seu Nome ou Empresa</label>
+                                    <input type="text" id="quoteName" required placeholder="Ex: João Silva / Condomínio Solar" class="w-full px-4 py-3 rounded-xl glass-input text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-blue-200 mb-1.5">Cidade na Bahia</label>
+                                    <input type="text" id="quoteCity" required placeholder="Ex: Feira de Santana, Salvador, Alagoinhas..." class="w-full px-4 py-3 rounded-xl glass-input text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-blue-200 mb-1.5">Tipo de Serviço Elétrico</label>
+                                    <select id="quoteService" class="w-full px-4 py-3 rounded-xl glass-input text-sm">
+                                        <option value="Projetos Elétricos">Projetos Elétricos</option>
+                                        <option value="Diagramas Elétricos">Diagramas Elétricos</option>
+                                        <option value="Instalações Elétricas Residenciais e Comerciais">Instalações Residenciais e Comerciais</option>
+                                        <option value="Instalações Elétricas Industriais">Instalações Elétricas Industriais</option>
+                                        <option value="Montagem e Instalação de Eletrocalhas">Eletrocalha (Montagem e Instalação)</option>
+                                        <option value="Quadros de Distribuição">Quadros de Distribuição</option>
+                                        <option value="Manutenção Elétrica">Manutenção Elétrica</option>
+                                        <option value="Infraestrutura Elétrica">Infraestrutura Elétrica</option>
+                                        <option value="Iluminação Interna e Externa">Iluminação Interna e Externa</option>
+                                        <option value="Passagem de Cabos e Circuitos">Passagem de Cabos e Circuitos</option>
+                                        <option value="Adequações Elétricas">Montagem e Adequação Elétrica</option>
+                                        <option value="Execução de Serviços e Obras Elétricas">Serviços e Obras Elétricas em Geral</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-blue-200 mb-1.5">Detalhes do Projeto ou Necessidade</label>
+                                    <textarea id="quoteDetails" rows="2" placeholder="Conte brevemente o que você precisa..." class="w-full px-4 py-2.5 rounded-xl glass-input text-sm"></textarea>
+                                </div>
+                                <button type="submit" class="w-full btn-gold-gradient py-3.5 px-6 rounded-xl font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 uppercase tracking-wide">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                    <span>Solicitar Orçamento Agora</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="glass-card rounded-2xl p-5 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-slate-950 text-xl flex-shrink-0 shadow-md">
+                        <i class="fa-solid fa-shield-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-base">Segurança em Primeiro Lugar</h3>
+                        <p class="text-xs text-blue-200/80 mt-1">Rigor técnico e cumprimento das normas vigentes em todas as instalações.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl p-5 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-slate-950 text-xl flex-shrink-0 shadow-md">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-base">Compromisso com o Cliente</h3>
+                        <p class="text-xs text-blue-200/80 mt-1">Pontualidade, transparência e responsabilidade do projeto à entrega final.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl p-5 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-slate-950 text-xl flex-shrink-0 shadow-md">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-base">Equipe Especializada</h3>
+                        <p class="text-xs text-blue-200/80 mt-1">Profissionais qualificados em sistemas residenciais, prediais e industriais.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl p-5 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-slate-950 text-xl flex-shrink-0 shadow-md">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-base">Soluções Personalizadas</h3>
+                        <p class="text-xs text-blue-200/80 mt-1">Dimensionamento sob medida para máxima eficiência e economia de energia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div>
+                        <span class="inline-block px-3.5 py-1 rounded-lg bg-yellow-400 text-slate-950 font-black text-xs uppercase tracking-wider mb-2">Trabalha com:</span>
+                        <h2 class="font-brand font-black text-2xl sm:text-4xl text-white">
+                            NOSSOS <span class="text-gradient-gold">SERVIÇOS ELÉTRICOS</span>
+                        </h2>
+                    </div>
+                    <p class="text-sm text-blue-200/85 max-w-md">
+                        Clique em qualquer serviço abaixo para solicitar um orçamento personalizado diretamente pelo nosso WhatsApp.
+                    </p>
+                </div>
+
+                <div id="servicesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+            </div>
+
+            <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-yellow-400/30 flex flex-col lg:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 text-center lg:text-left">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-yellow-400">GEC Serviços Elétricos — Energia para o seu projeto!</span>
+                    <h3 class="font-brand font-black text-2xl sm:text-3xl text-white">Precisa de um orçamento ou visita técnica na Bahia?</h3>
+                    <p class="text-sm sm:text-base text-blue-100/85">Fale diretamente com nossa equipe técnica pelo WhatsApp <strong class="text-yellow-300">(75) 98211-4080</strong> e garanta segurança máxima na sua obra.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto flex-shrink-0">
+                    <a href="https://wa.me/5575982114080?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20com%20a%20GEC%20Servi%C3%A7os%20El%C3%A9tricos." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-gradient px-7 py-4 rounded-2xl font-extrabold text-base flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Chamar no WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-portfolio" class="hidden space-y-8">
+            <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-blue-400/30">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-xs font-bold uppercase mb-2">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Portfólio de Obras Realizadas</span>
+                        </div>
+                        <h2 class="font-brand font-black text-2xl sm:text-4xl text-white">
+                            SERVIÇOS <span class="text-gradient-gold">CONCLUÍDOS</span>
+                        </h2>
+                        <p class="text-sm sm:text-base text-blue-100/85 mt-1 max-w-2xl">
+                            Confira registros reais de quadros de distribuição, eletrocalhas, projetos, diagramas e obras elétricas entregues pela GEC Serviços Elétricos.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <button onclick="switchTab('admin')" class="btn-gold-gradient px-5 py-3 rounded-xl font-extrabold text-xs sm:text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Adicionar Novo Serviço Concluído</span>
+                        </button>
+                        <button onclick="loadPortfolioData(true)" class="btn-electric-gradient px-4 py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-rotate"></i>
+                            <span>Atualizar Lista</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-5 border-t border-blue-400/20 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                    <div class="flex flex-wrap gap-2" id="portfolioCategoryFilters">
+                        <button onclick="filterPortfolio('TODOS')" class="filter-chip active-chip px-3.5 py-1.5 rounded-xl text-xs font-bold bg-yellow-400 text-slate-950 transition">Todos</button>
+                        <button onclick="filterPortfolio('Quadros de Distribuição')" class="filter-chip px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900/70 text-blue-200 border border-blue-400/25 hover:border-yellow-400 transition">Quadros de Distribuição</button>
+                        <button onclick="filterPortfolio('Eletrocalha')" class="filter-chip px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900/70 text-blue-200 border border-blue-400/25 hover:border-yellow-400 transition">Eletrocalha</button>
+                        <button onclick="filterPortfolio('Projetos & Diagramas')" class="filter-chip px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900/70 text-blue-200 border border-blue-400/25 hover:border-yellow-400 transition">Projetos & Diagramas</button>
+                        <button onclick="filterPortfolio('Instalações & Obras')" class="filter-chip px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900/70 text-blue-200 border border-blue-400/25 hover:border-yellow-400 transition">Instalações & Obras</button>
+                    </div>
+                    <div class="relative min-w-[240px]">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-300/60 text-xs"></i>
+                        <input type="text" id="portfolioSearch" oninput="renderPortfolioCards()" placeholder="Buscar obra, cidade ou descrição..." class="w-full pl-9 pr-4 py-2 rounded-xl glass-input text-xs sm:text-sm">
+                    </div>
+                </div>
+            </div>
+
+            <div id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </section>
+
+        <section id="view-admin" class="hidden space-y-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-7">
+                    <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-yellow-400/30 space-y-6">
+                        <div class="flex items-center justify-between border-b border-blue-400/20 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center text-slate-950 font-black text-lg">
+                                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-brand font-black text-xl sm:text-2xl text-white">CADASTRAR SERVIÇO CONCLUÍDO</h2>
+                                    <p class="text-xs text-blue-200">Adicione foto, título e descrição técnica do serviço realizado</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form id="addCompletedServiceForm" onsubmit="handlePublishService(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-blue-200 mb-1.5">Título do Serviço / Obra *</label>
+                                    <input type="text" id="srvTitle" required placeholder="Ex: Montagem de QGBT Industrial 400A" class="w-full px-4 py-3 rounded-xl glass-input text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-blue-200 mb-1.5">Categoria *</label>
+                                    <select id="srvCategory" class="w-full px-4 py-3 rounded-xl glass-input text-sm">
+                                        <option value="Quadros de Distribuição">Quadros de Distribuição</option>
+                                        <option value="Eletrocalha">Eletrocalha</option>
+                                        <option value="Projetos & Diagramas">Projetos & Diagramas</option>
+                                        <option value="Instalações & Obras">Instalações & Obras</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-blue-200 mb-1.5">Local / Cidade (Bahia) *</label>
+                                    <input type="text" id="srvLocation" required placeholder="Ex: Feira de Santana - BA" class="w-full px-4 py-3 rounded-xl glass-input text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-blue-200 mb-1.5">Data de Conclusão *</label>
+                                    <input type="date" id="srvDate" required class="w-full px-4 py-3 rounded-xl glass-input text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-blue-200 mb-1.5">Descrição Detalhada do Serviço Concluído *</label>
+                                <textarea id="srvDescription" rows="4" required placeholder="Descreva o que foi executado: organização de cabos, dimensionamento de disjuntores, infraestrutura de eletrocalhas, adequação NR-10, benefícios entregues ao cliente..." class="w-full px-4 py-3 rounded-xl glass-input text-sm"></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-blue-200 mb-1.5">Foto do Serviço Concluído (Upload ou Câmera)</label>
+                                <div class="glass-card rounded-2xl p-4 border border-dashed border-blue-400/50 text-center">
+                                    <input type="file" id="srvImageInput" accept="image/*" onchange="previewSelectedImage(event)" class="hidden">
+                                    <label for="srvImageInput" class="cursor-pointer flex flex-col items-center justify-center gap-2 py-3">
+                                        <div id="imagePreviewContainer" class="hidden w-full max-h-56 overflow-hidden rounded-xl mb-2 border border-yellow-400/40">
+                                            <img id="imagePreviewEl" src="" alt="Prévia" class="w-full h-48 object-cover">
+                                        </div>
+                                        <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-400/40 flex items-center justify-center text-yellow-400 text-xl">
+                                            <i class="fa-solid fa-camera"></i>
+                                        </div>
+                                        <span class="text-xs sm:text-sm font-bold text-white">Clique para selecionar uma foto da galeria ou câmera</span>
+                                        <span class="text-[11px] text-blue-200/70">A imagem é otimizada automaticamente para carregamento rápido no Cloudflare Pages</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                                <button type="submit" id="btnPublishSubmit" class="flex-1 btn-gold-gradient py-4 px-6 rounded-xl font-extrabold text-sm sm:text-base flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-bolt"></i>
+                                    <span>Salvar e Publicar Serviço Concluído</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-panel rounded-3xl p-6 sm:p-7 border border-blue-400/30 space-y-5">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-400/40 flex items-center justify-center text-yellow-400 text-lg">
+                                    <i class="fa-brands fa-github"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-brand font-bold text-white text-base">INTEGRAÇÃO GITHUB + CLOUDFLARE</h3>
+                                    <p class="text-xs text-blue-200/80">Sincroniza <code class="text-yellow-300">servicos.json</code> direto no seu repositório</p>
+                                </div>
+                            </div>
+                            <span id="ghStatusBadge" class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-400/30">Modo Local</span>
+                        </div>
+
+                        <div class="space-y-3 text-xs">
+                            <div>
+                                <label class="block font-bold text-blue-200 mb-1">Usuário / Organização do GitHub</label>
+                                <input type="text" id="cfgGhOwner" placeholder="Ex: seu-usuario" class="w-full px-3.5 py-2.5 rounded-xl glass-input">
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block font-bold text-blue-200 mb-1">Nome do Repositório</label>
+                                    <input type="text" id="cfgGhRepo" placeholder="Ex: gec-eletrica" class="w-full px-3.5 py-2.5 rounded-xl glass-input">
+                                </div>
+                                <div>
+                                    <label class="block font-bold text-blue-200 mb-1">Branch</label>
+                                    <input type="text" id="cfgGhBranch" value="main" placeholder="main" class="w-full px-3.5 py-2.5 rounded-xl glass-input">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block font-bold text-blue-200 mb-1">GitHub Personal Access Token (Permissão: repo / contents)</label>
+                                <input type="password" id="cfgGhToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" class="w-full px-3.5 py-2.5 rounded-xl glass-input">
+                            </div>
+                            <div>
+                                <label class="block font-bold text-blue-200 mb-1">Link do seu Instagram (Para o Botão Flutuante)</label>
+                                <input type="url" id="cfgInstaUrl" placeholder="https://www.instagram.com/gecservicoseletricos" class="w-full px-3.5 py-2.5 rounded-xl glass-input">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <button onclick="saveSystemSettings()" class="flex-1 btn-electric-gradient py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-floppy-disk text-yellow-400"></i>
+                                <span>Salvar Configurações</span>
+                            </button>
+                            <button onclick="exportJsonFile()" class="px-4 py-3 rounded-xl font-bold text-xs bg-slate-900/80 border border-blue-400/30 text-blue-200 hover:border-yellow-400 transition flex items-center gap-1.5" title="Baixar arquivo servicos.json">
+                                <i class="fa-solid fa-download text-yellow-400"></i>
+                                <span>Baixar JSON</span>
+                            </button>
+                        </div>
+
+                        <div class="rounded-2xl bg-slate-950/70 p-4 border border-blue-400/20 text-xs text-blue-200/85 space-y-1.5">
+                            <p class="font-bold text-yellow-400 flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span>Como funciona no GitHub + Cloudflare Pages:</span>
+                            </p>
+                            <p>1. Com o Token configurado, ao clicar em <strong>Salvar e Publicar</strong>, o site envia automaticamente o arquivo <code class="text-white">servicos.json</code> e a foto para o seu GitHub.</p>
+                            <p>2. O <strong>Cloudflare Pages</strong> detecta o commit e atualiza o site online para todos os clientes em poucos segundos.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel rounded-3xl p-6 border border-blue-400/20 space-y-3">
+                        <h3 class="font-brand font-bold text-white text-sm uppercase tracking-wider flex items-center gap-2">
+                            <i class="fa-solid fa-list-check text-yellow-400"></i>
+                            <span>Gerenciar Serviços Publicados</span>
+                        </h3>
+                        <div id="adminManageList" class="space-y-2.5 max-h-80 overflow-y-auto pr-1"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="relative z-10 glass-panel border-t border-blue-400/25 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-slate-950 font-black">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <p class="font-brand font-black text-white text-base">GEC SERVIÇOS ELÉTRICOS • GEC ELECTRIC INC.</p>
+                        <p class="text-xs text-blue-200/80">Energia, qualidade e confiança para o seu projeto! • Atendimento em toda a Bahia</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm">
+                    <a href="https://wa.me/5575982114080?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20com%20a%20GEC%20Servi%C3%A7os%20El%C3%A9tricos." target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 font-bold flex items-center gap-2 hover:bg-emerald-500/30 transition">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>(75) 98211-4080</span>
+                    </a>
+                    <a id="footerInstaLink" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-pink-500/20 border border-pink-400/40 text-pink-300 font-bold flex items-center gap-2 hover:bg-pink-500/30 transition">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>Siga no Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a id="floatingInstaBtn" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram GEC Serviços Elétricos" class="fixed bottom-6 right-6 z-50 insta-float w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl group">
+        <i class="fa-brands fa-instagram"></i>
+        <span class="absolute right-full mr-3 px-3.5 py-1.5 rounded-xl glass-panel text-xs font-extrabold text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-pink-400/40">
+            Ver nosso Instagram
+        </span>
+    </a>
+
+    <div id="detailModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-panel rounded-3xl max-w-2xl w-full overflow-hidden border border-yellow-400/40 shadow-2xl">
+            <div class="relative h-64 sm:h-80 bg-slate-900">
+                <img id="modalImg" src="" alt="Obra GEC" class="w-full h-full object-cover">
+                <button onclick="closeDetailModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-slate-950/80 text-white hover:text-yellow-400 flex items-center justify-center border border-white/20">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+                <span id="modalCategory" class="absolute bottom-4 left-4 px-3.5 py-1 rounded-full bg-yellow-400 text-slate-950 font-extrabold text-xs uppercase"></span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-blue-200">
+                    <span id="modalLocation" class="flex items-center gap-1.5 font-semibold"><i class="fa-solid fa-location-dot text-yellow-400"></i> <span></span></span>
+                    <span id="modalDate" class="flex items-center gap-1.5"><i class="fa-regular fa-calendar text-yellow-400"></i> <span></span></span>
+                </div>
+                <h3 id="modalTitle" class="font-brand font-black text-xl sm:text-2xl text-white"></h3>
+                <p id="modalDesc" class="text-sm sm:text-base text-blue-100/90 leading-relaxed whitespace-pre-line"></p>
+                <div class="pt-4 border-t border-blue-400/20 flex flex-col sm:flex-row gap-3">
+                    <a id="modalWhatsappBtn" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 btn-whatsapp-gradient py-3.5 px-5 rounded-xl font-extrabold text-sm flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Solicitar Orçamento de Serviço Semelhante</span>
+                    </a>
+                    <button onclick="closeDetailModal()" class="px-5 py-3.5 rounded-xl bg-slate-800/80 text-blue-200 font-bold text-sm hover:bg-slate-700 transition">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toastBox" class="fixed top-20 right-5 z-50 hidden max-w-sm glass-panel px-5 py-4 rounded-2xl border-l-4 border-l-yellow-400 shadow-2xl flex items-center gap-3">
+        <i id="toastIcon" class="fa-solid fa-bolt text-yellow-400 text-lg"></i>
+        <p id="toastText" class="text-xs sm:text-sm font-bold text-white"></p>
+    </div>
+
+    <script>
+        const WHATSAPP_NUMBER = "5575982114080";
+        const STORAGE_PORTFOLIO_KEY = "gec_electric_portfolio_v1";
+        const STORAGE_CONFIG_KEY = "gec_electric_config_v1";
+
+        const OFFICIAL_SERVICES = [
+            {
+                title: "Projetos Elétricos",
+                icon: "fa-compass-drafting",
+                highlight: false,
+                desc: "Elaboração técnica de projetos elétricos residenciais, comerciais e industriais seguindo rigorosamente a NBR 5410."
+            },
+            {
+                title: "Diagramas Elétricos",
+                icon: "fa-diagram-project",
+                highlight: false,
+                desc: "Desenvolvimento e atualização de diagramas unifilares, multifilares e funcionais para quadros e painéis."
+            },
+            {
+                title: "Instalações Elétricas Residenciais e Comerciais",
+                icon: "fa-building-circle-check",
+                highlight: false,
+                desc: "Execução completa de instalações elétricas novas ou reformas para residências, lojas, clínicas e escritórios."
+            },
+            {
+                title: "Instalações Elétricas Industriais",
+                icon: "fa-industry",
+                highlight: false,
+                desc: "Infraestrutura de força, comando e distribuição elétrica de alta confiabilidade para galpões e indústrias."
+            },
+            {
+                title: "Montagem e Instalação de Eletrocalhas",
+                icon: "fa-layer-group",
+                highlight: true,
+                desc: "Especialista em dimensionamento, suporte e montagem de eletrocalhas, perfilados e leitos para cabos."
+            },
+            {
+                title: "Montagem e Organização de Quadros de Distribuição",
+                icon: "fa-server",
+                highlight: true,
+                desc: "Montagem, anilhamento, balanceamento de fases, proteção DPS/DR e organização impecável de QDC e QGBT."
+            },
+            {
+                title: "Manutenção Elétrica",
+                icon: "fa-screwdriver-wrench",
+                highlight: false,
+                desc: "Manutenção preventiva e corretiva para eliminar aquecimentos, quedas de energia, curtos e falhas elétricas."
+            },
+            {
+                title: "Infraestrutura Elétrica",
+                icon: "fa-network-wired",
+                highlight: false,
+                desc: "Eletrodutos aparentes e embutidos, caixas de passagem, aterramento técnico e tubulações estruturadas."
+            },
+            {
+                title: "Iluminação Interna e Externa",
+                icon: "fa-lightbulb",
+                highlight: false,
+                desc: "Projetos e instalação de iluminação LED de alto desempenho para ambientes internos, fachadas e galpões."
+            },
+            {
+                title: "Passagem de Cabos e Circuitos",
+                icon: "fa-plug-circle-bolt",
+                highlight: false,
+                desc: "Lançamento organizado de cabos alimentadores e circuitos terminais com identificação técnica."
+            },
+            {
+                title: "Adequações Elétricas",
+                icon: "fa-shield-halved",
+                highlight: false,
+                desc: "Modernização e adequação de instalações antigas para aumento de carga e conformidade com normas de segurança."
+            },
+            {
+                title: "Execução de Serviços e Obras Elétricas",
+                icon: "fa-helmet-safety",
+                highlight: false,
+                desc: "Acompanhamento e execução integral de obras elétricas de pequeno, médio e grande porte em toda a Bahia."
+            }
+        ];
+
+        function createSvgCover(type, titleText) {
+            const palettes = {
+                "Eletrocalha": ["#0a2351", "#0055ff", "#ffcc00"],
+                "Quadros de Distribuição": ["#07193d", "#0044cc", "#ffaa00"],
+                "Projetos & Diagramas": ["#091e47", "#1d4ed8", "#38bdf8"],
+                "Instalações & Obras": ["#0c1938", "#0369a1", "#facc15"]
+            };
+            const colors = palettes[type] || palettes["Instalações & Obras"];
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+                <defs>
+                    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="${colors[0]}"/>
+                        <stop offset="60%" stop-color="${colors[1]}"/>
+                        <stop offset="100%" stop-color="#030712"/>
+                    </linearGradient>
+                </defs>
+                <rect width="800" height="500" fill="url(#g)"/>
+                <g stroke="${colors[2]}" stroke-width="2" opacity="0.22" fill="none">
+                    <path d="M0 100 H800 M0 250 H800 M0 400 H800 M160 0 V500 M400 0 V500 M640 0 V500"/>
+                    <circle cx="400" cy="250" r="140"/>
+                </g>
+                <polygon points="400,115 360,255 405,255 380,365 455,225 405,225" fill="${colors[2]}" opacity="0.9"/>
+                <text x="400" y="425" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="24" fill="#ffffff">${titleText}</text>
+                <text x="400" y="458" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="16" fill="${colors[2]}">GEC SERVIÇOS ELÉTRICOS • BAHIA</text>
+            </svg>`;
+            return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+        }
+
+        const DEFAULT_PORTFOLIO = [
+            {
+                id: "gec-obra-1",
+                title: "Montagem e Organização de Quadro de Distribuição (QDC)",
+                category: "Quadros de Distribuição",
+                location: "Bahia",
+                date: "2025-02-10",
+                description: "Montagem técnica completa de quadro de distribuição com barramentos isolados, disjuntores dimensionados por circuito, proteção DPS e IDR, cabeamento penteado e identificado com anilhas para máxima segurança e fácil manutenção.",
+                image: createSvgCover("Quadros de Distribuição", "QUADRO DE DISTRIBUIÇÃO ORGANIZADO")
+            },
+            {
+                id: "gec-obra-2",
+                title: "Infraestrutura Aérea com Eletrocalha Perfurada Galvanizada",
+                category: "Eletrocalha",
+                location: "Bahia",
+                date: "2025-01-28",
+                description: "Instalação de linha principal e derivações em eletrocalha metálica perfurada com suportação reforçada em tirantes, garantindo organização estrutural e dissipação térmica ideal para os circuitos alimentadores.",
+                image: createSvgCover("Eletrocalha", "INFRAESTRUTURA EM ELETROCALHA")
+            },
+            {
+                id: "gec-obra-3",
+                title: "Elaboração de Projeto Elétrico e Diagrama Unifilar",
+                category: "Projetos & Diagramas",
+                location: "Bahia",
+                date: "2025-01-15",
+                description: "Levantamento de cargas, cálculo de demanda, dimensionamento de condutores e proteções com entrega de planta técnica detalhada e diagrama elétrico completo conforme NBR 5410.",
+                image: createSvgCover("Projetos & Diagramas", "PROJETO & DIAGRAMA ELÉTRICO")
+            }
+        ];
+
+        let portfolioItems = [];
+        let currentCategoryFilter = "TODOS";
+        let currentSelectedImageBase64 = "";
+
+        function showToast(message, isError = false) {
+            const box = document.getElementById("toastBox");
+            const txt = document.getElementById("toastText");
+            const icon = document.getElementById("toastIcon");
+            txt.textContent = message;
+            icon.className = isError
+                ? "fa-solid fa-triangle-exclamation text-red-400 text-lg"
+                : "fa-solid fa-bolt text-yellow-400 text-lg";
+            box.classList.remove("hidden");
+            setTimeout(() => {
+                box.classList.add("hidden");
+            }, 4200);
+        }
+
+        function switchTab(tabName) {
+            ["home", "portfolio", "admin"].forEach(t => {
+                const section = document.getElementById(`view-${t}`);
+                const btn = document.getElementById(`tabBtn-${t}`);
+                if (t === tabName) {
+                    section.classList.remove("hidden");
+                    btn.classList.add("tab-active");
+                } else {
+                    section.classList.add("hidden");
+                    btn.classList.remove("tab-active");
+                }
+            });
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function renderServicesGrid() {
+            const container = document.getElementById("servicesGrid");
+            container.innerHTML = OFFICIAL_SERVICES.map(srv => {
+                const wpMsg = encodeURIComponent(`Olá! Vim pelo site da GEC Serviços Elétricos e gostaria de solicitar um orçamento para: *${srv.title}*.`);
+                const wpLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${wpMsg}`;
+                const badgeHtml = srv.highlight
+                    ? `<span class="px-2.5 py-0.5 rounded-full bg-yellow-400 text-slate-950 font-black text-[10px] uppercase tracking-wider">Destaque</span>`
+                    : "";
+
+                return `
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden ${srv.highlight ? 'border-yellow-400/50' : ''}">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-900 border border-blue-400/40 flex items-center justify-center text-yellow-400 text-xl shadow-md">
+                                <i class="fa-solid ${srv.icon}"></i>
+                            </div>
+                            ${badgeHtml}
+                        </div>
+                        <h3 class="font-brand font-extrabold text-lg text-white mb-2 flex items-start gap-2">
+                            <i class="fa-solid fa-circle-check text-yellow-400 text-sm mt-1.5 flex-shrink-0"></i>
+                            <span class="${srv.highlight ? 'text-yellow-300' : 'text-white'}">${srv.title}</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-blue-100/80 leading-relaxed mb-6">${srv.desc}</p>
+                    </div>
+                    <a href="${wpLink}" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-blue-500/20 hover:bg-emerald-500 border border-blue-400/30 hover:border-emerald-400 text-blue-100 hover:text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all">
+                        <i class="fa-brands fa-whatsapp text-base text-emerald-400 group-hover:text-white"></i>
+                        <span>Solicitar Orçamento</span>
+                    </a>
+                </div>`;
+            }).join("");
+        }
+
+        function sendCustomWhatsAppQuote(event) {
+            event.preventDefault();
+            const name = document.getElementById("quoteName").value.trim();
+            const city = document.getElementById("quoteCity").value.trim();
+            const service = document.getElementById("quoteService").value;
+            const details = document.getElementById("quoteDetails").value.trim();
+
+            const text = `⚡ *SOLICITAÇÃO DE ORÇAMENTO - GEC SERVIÇOS ELÉTRICOS*\n\n` +
+                `*Cliente:* ${name}\n` +
+                `*Cidade/Local:* ${city}\n` +
+                `*Serviço Desejado:* ${service}\n` +
+                (details ? `*Detalhes:* ${details}\n\n` : `\n`) +
+                `Aguardo retorno para avaliação!`;
+
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+            window.open(url, "_blank", "noopener,noreferrer");
+        }
+
+        async function loadPortfolioData(showFeedback = false) {
+            let loadedFromRemote = false;
+            try {
+                const res = await fetch(`./servicos.json?t=${Date.now()}`, { cache: "no-store" });
+                if (res.ok) {
+                    const data = await res.json();
+                    if (Array.isArray(data) && data.length > 0) {
+                        portfolioItems = data;
+                        localStorage.setItem(STORAGE_PORTFOLIO_KEY, JSON.stringify(portfolioItems));
+                        loadedFromRemote = true;
+                    }
+                }
+            } catch (e) {
+                loadedFromRemote = false;
+            }
+
+            if (!loadedFromRemote) {
+                const cached = localStorage.getItem(STORAGE_PORTFOLIO_KEY);
+                if (cached) {
+                    try {
+                        portfolioItems = JSON.parse(cached);
+                    } catch (err) {
+                        portfolioItems = [...DEFAULT_PORTFOLIO];
+                    }
+                } else {
+                    portfolioItems = [...DEFAULT_PORTFOLIO];
+                    localStorage.setItem(STORAGE_PORTFOLIO_KEY, JSON.stringify(portfolioItems));
+                }
+            }
+
+            updatePortfolioCounter();
+            renderPortfolioCards();
+            renderAdminManageList();
+
+            if (showFeedback) {
+                showToast("Lista de serviços concluídos atualizada!");
+            }
+        }
+
+        function updatePortfolioCounter() {
+            const badge = document.getElementById("badgeCount");
+            if (badge) badge.textContent = portfolioItems.length;
+        }
+
+        function filterPortfolio(category) {
+            currentCategoryFilter = category;
+            const chips = document.querySelectorAll("#portfolioCategoryFilters .filter-chip");
+            chips.forEach(btn => {
+                if (btn.textContent.trim() === category || (category === "TODOS" && btn.textContent.trim() === "Todos")) {
+                    btn.className = "filter-chip px-3.5 py-1.5 rounded-xl text-xs font-bold bg-yellow-400 text-slate-950 transition";
+                } else {
+                    btn.className = "filter-chip px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900/70 text-blue-200 border border-blue-400/25 hover:border-yellow-400 transition";
+                }
+            });
+            renderPortfolioCards();
+        }
+
+        function renderPortfolioCards() {
+            const grid = document.getElementById("portfolioGrid");
+            const searchQuery = (document.getElementById("portfolioSearch")?.value || "").toLowerCase().trim();
+
+            const filtered = portfolioItems.filter(item => {
+                const matchCat = currentCategoryFilter === "TODOS" || item.category === currentCategoryFilter;
+                const matchSearch = !searchQuery ||
+                    item.title.toLowerCase().includes(searchQuery) ||
+                    item.description.toLowerCase().includes(searchQuery) ||
+                    (item.location && item.location.toLowerCase().includes(searchQuery));
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                <div class="col-span-full glass-card rounded-3xl p-10 text-center space-y-4">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-blue-500/20 flex items-center justify-center text-yellow-400 text-2xl">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+                    <h3 class="font-brand font-bold text-xl text-white">Nenhum serviço encontrado neste filtro</h3>
+                    <p class="text-sm text-blue-200/80 max-w-md mx-auto">Você pode cadastrar novas obras concluídas na aba "Publicar Obra".</p>
+                </div>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(item => {
+                const imgSrc = item.image || createSvgCover(item.category, item.title);
+                const formattedDate = item.date ? item.date.split("-").reverse().join("/") : "Concluído";
+                return `
+                <article class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group cursor-pointer" onclick="openDetailModal('${item.id}')">
+                    <div>
+                        <div class="relative h-52 overflow-hidden bg-slate-950">
+                            <img src="${imgSrc}" alt="${item.title}" onerror="this.src='${createSvgCover(item.category, 'GEC SERVIÇOS ELÉTRICOS')}'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-yellow-400 text-slate-950 font-extrabold text-[11px] uppercase shadow">
+                                ${item.category}
+                            </span>
+                            <span class="absolute bottom-3 left-3.5 text-xs font-semibold text-blue-100 flex items-center gap-1.5">
+                                <i class="fa-solid fa-location-dot text-yellow-400"></i>
+                                ${item.location || "Bahia"}
+                            </span>
+                            <span class="absolute bottom-3 right-3.5 text-[11px] text-blue-200/90 bg-slate-900/80 px-2.5 py-0.5 rounded-lg border border-blue-400/20">
+                                ${formattedDate}
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-brand font-extrabold text-lg text-white group-hover:text-yellow-300 transition line-clamp-2 mb-2">${item.title}</h3>
+                            <p class="text-xs sm:text-sm text-blue-100/80 line-clamp-3 leading-relaxed">${item.description}</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-5 pt-2 flex items-center justify-between border-t border-blue-400/15">
+                        <span class="text-xs font-bold text-yellow-400 flex items-center gap-1.5">
+                            <span>Ver descrição completa</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                        <i class="fa-solid fa-bolt text-blue-400/60"></i>
+                    </div>
+                </article>`;
+            }).join("");
+        }
+
+        function openDetailModal(id) {
+            const item = portfolioItems.find(x => x.id === id);
+            if (!item) return;
+
+            document.getElementById("modalImg").src = item.image || createSvgCover(item.category, item.title);
+            document.getElementById("modalCategory").textContent = item.category;
+            document.getElementById("modalLocation").querySelector("span").textContent = item.location || "Atendimento na Bahia";
+            document.getElementById("modalDate").querySelector("span").textContent = item.date ? item.date.split("-").reverse().join("/") : "Concluído";
+            document.getElementById("modalTitle").textContent = item.title;
+            document.getElementById("modalDesc").textContent = item.description;
+
+            const wpMsg = encodeURIComponent(`Olá! Vi no site da GEC o serviço concluído *"${item.title}"* (${item.category}) e gostaria de solicitar um orçamento semelhante.`);
+            document.getElementById("modalWhatsappBtn").href = `https://wa.me/${WHATSAPP_NUMBER}?text=${wpMsg}`;
+
+            document.getElementById("detailModal").classList.remove("hidden");
+        }
+
+        function closeDetailModal() {
+            document.getElementById("detailModal").classList.add("hidden");
+        }
+
+        function previewSelectedImage(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement("canvas");
+                    const maxDim = 960;
+                    let w = img.width;
+                    let h = img.height;
+                    if (w > h && w > maxDim) {
+                        h = Math.round((h * maxDim) / w);
+                        w = maxDim;
+                    } else if (h > maxDim) {
+                        w = Math.round((w * maxDim) / h);
+                        h = maxDim;
+                    }
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext("2d");
+                    ctx.drawImage(img, 0, 0, w, h);
+                    currentSelectedImageBase64 = canvas.toDataURL("image/jpeg", 0.82);
+
+                    const previewContainer = document.getElementById("imagePreviewContainer");
+                    const previewEl = document.getElementById("imagePreviewEl");
+                    previewEl.src = currentSelectedImageBase64;
+                    previewContainer.classList.remove("hidden");
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        async function handlePublishService(event) {
+            event.preventDefault();
+            const btn = document.getElementById("btnPublishSubmit");
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Publicando serviço...</span>`;
+
+            const title = document.getElementById("srvTitle").value.trim();
+            const category = document.getElementById("srvCategory").value;
+            const location = document.getElementById("srvLocation").value.trim();
+            const date = document.getElementById("srvDate").value;
+            const description = document.getElementById("srvDescription").value.trim();
+
+            const newItem = {
+                id: "gec-" + Date.now(),
+                title,
+                category,
+                location,
+                date,
+                description,
+                image: currentSelectedImageBase64 || createSvgCover(category, title.slice(0, 28).toUpperCase())
+            };
+
+            portfolioItems.unshift(newItem);
+            localStorage.setItem(STORAGE_PORTFOLIO_KEY, JSON.stringify(portfolioItems));
+
+            const synced = await syncPortfolioToGitHub();
+
+            updatePortfolioCounter();
+            renderPortfolioCards();
+            renderAdminManageList();
+
+            document.getElementById("addCompletedServiceForm").reset();
+            document.getElementById("srvDate").valueAsDate = new Date();
+            document.getElementById("imagePreviewContainer").classList.add("hidden");
+            currentSelectedImageBase64 = "";
+
+            btn.disabled = false;
+            btn.innerHTML = `<i class="fa-solid fa-bolt"></i> <span>Salvar e Publicar Serviço Concluído</span>`;
+
+            if (synced) {
+                showToast("Serviço publicado no GitHub! O Cloudflare Pages atualizará em instantes.");
+            } else {
+                showToast("Serviço adicionado e salvo! Configure o GitHub se quiser deploy automático.");
+            }
+
+            switchTab("portfolio");
+        }
+
+        async function deletePortfolioItem(id) {
+            portfolioItems = portfolioItems.filter(item => item.id !== id);
+            localStorage.setItem(STORAGE_PORTFOLIO_KEY, JSON.stringify(portfolioItems));
+            updatePortfolioCounter();
+            renderPortfolioCards();
+            renderAdminManageList();
+            await syncPortfolioToGitHub();
+            showToast("Serviço removido do portfólio.");
+        }
+
+        function renderAdminManageList() {
+            const list = document.getElementById("adminManageList");
+            if (!list) return;
+            if (portfolioItems.length === 0) {
+                list.innerHTML = `<p class="text-xs text-blue-200/70">Nenhum serviço cadastrado.</p>`;
+                return;
+            }
+            list.innerHTML = portfolioItems.map(item => `
+                <div class="flex items-center justify-between gap-3 p-3 rounded-xl bg-slate-900/75 border border-blue-400/20">
+                    <div class="min-w-0">
+                        <p class="text-xs font-bold text-white truncate">${item.title}</p>
+                        <p class="text-[11px] text-yellow-400">${item.category} • ${item.location}</p>
+                    </div>
+                    <button onclick="deletePortfolioItem('${item.id}')" class="px-2.5 py-1.5 rounded-lg bg-red-500/20 hover:bg-red-500/40 text-red-300 text-xs transition flex-shrink-0" title="Excluir">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+            `).join("");
+        }
+
+        function loadSystemSettings() {
+            const raw = localStorage.getItem(STORAGE_CONFIG_KEY);
+            let cfg = {
+                owner: "",
+                repo: "",
+                branch: "main",
+                token: "",
+                instaUrl: "https://www.instagram.com/"
+            };
+            if (raw) {
+                try {
+                    cfg = { ...cfg, ...JSON.parse(raw) };
+                } catch (e) {}
+            }
+            document.getElementById("cfgGhOwner").value = cfg.owner || "";
+            document.getElementById("cfgGhRepo").value = cfg.repo || "";
+            document.getElementById("cfgGhBranch").value = cfg.branch || "main";
+            document.getElementById("cfgGhToken").value = cfg.token || "";
+            document.getElementById("cfgInstaUrl").value = cfg.instaUrl || "https://www.instagram.com/";
+
+            applyInstagramLinks(cfg.instaUrl);
+            updateGhBadge(cfg);
+            return cfg;
+        }
+
+        function saveSystemSettings() {
+            const cfg = {
+                owner: document.getElementById("cfgGhOwner").value.trim(),
+                repo: document.getElementById("cfgGhRepo").value.trim(),
+                branch: document.getElementById("cfgGhBranch").value.trim() || "main",
+                token: document.getElementById("cfgGhToken").value.trim(),
+                instaUrl: document.getElementById("cfgInstaUrl").value.trim() || "https://www.instagram.com/"
+            };
+            localStorage.setItem(STORAGE_CONFIG_KEY, JSON.stringify(cfg));
+            applyInstagramLinks(cfg.instaUrl);
+            updateGhBadge(cfg);
+            showToast("Configurações do GitHub e Instagram salvas com sucesso!");
+        }
+
+        function applyInstagramLinks(url) {
+            const validUrl = url && url.startsWith("http") ? url : "https://www.instagram.com/";
+            document.getElementById("floatingInstaBtn").href = validUrl;
+            document.getElementById("footerInstaLink").href = validUrl;
+        }
+
+        function updateGhBadge(cfg) {
+            const badge = document.getElementById("ghStatusBadge");
+            if (cfg.owner && cfg.repo && cfg.token) {
+                badge.textContent = "GitHub Conectado";
+                badge.className = "px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/40";
+            } else {
+                badge.textContent = "Modo Local";
+                badge.className = "px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-400/30";
+            }
+        }
+
+        function utf8ToBase64(str) {
+            return window.btoa(unescape(encodeURIComponent(str)));
+        }
+
+        async function syncPortfolioToGitHub() {
+            const cfg = loadSystemSettings();
+            if (!cfg.owner || !cfg.repo || !cfg.token) {
+                return false;
+            }
+            const apiUrl = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/servicos.json`;
+            try {
+                let sha = null;
+                const getRes = await fetch(`${apiUrl}?ref=${cfg.branch}`, {
+                    headers: {
+                        "Authorization": `Bearer ${cfg.token}`,
+                        "Accept": "application/vnd.github+json"
+                    }
+                });
+                if (getRes.ok) {
+                    const fileInfo = await getRes.json();
+                    sha = fileInfo.sha;
+                }
+
+                const jsonContent = JSON.stringify(portfolioItems, null, 2);
+                const bodyPayload = {
+                    message: "Atualização de Serviços Concluídos - GEC Serviços Elétricos",
+                    content: utf8ToBase64(jsonContent),
+                    branch: cfg.branch
+                };
+                if (sha) bodyPayload.sha = sha;
+
+                const putRes = await fetch(apiUrl, {
+                    method: "PUT",
+                    headers: {
+                        "Authorization": `Bearer ${cfg.token}`,
+                        "Accept": "application/vnd.github+json",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(bodyPayload)
+                });
+                return putRes.ok;
+            } catch (err) {
+                return false;
+            }
+        }
+
+        function exportJsonFile() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(portfolioItems, null, 2));
+            const dlAnchor = document.createElement("a");
+            dlAnchor.setAttribute("href", dataStr);
+            dlAnchor.setAttribute("download", "servicos.json");
+            document.body.appendChild(dlAnchor);
+            dlAnchor.click();
+            dlAnchor.remove();
+            showToast("Arquivo servicos.json baixado!");
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("srvDate").valueAsDate = new Date();
+            renderServicesGrid();
+            loadSystemSettings();
+            loadPortfolioData(false);
+        });
+    </script>
+</body>
+</html>
